@@ -1,7 +1,7 @@
-# Zomato-Rating-Prediction
+<h1>Zomato-Rating-Prediction</h1>
 
-I made restaurants rating prediction project. 
-I used this dataset to build model: https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data
+<p>I made restaurants rating prediction project.</p>
+<p>I used this dataset to build model: https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data</p>
 
-Images:
+<h4>Images:</h4>
 <img width="400px" src="https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data">
