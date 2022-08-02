@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zomato Rating Predict</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2017/01/22/19/20/pizza-2000614_960_720.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .logos-container {
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            position: relative;
+            background: linear-gradient(#e66465, #9198e5);
+            margin: 10px;
+        }
+
+
+        .logo2 {
+            width: 136px;
+            position: absolute;
+            background: linear-gradient(#e66465, #9198e5);
+            top: 0;
+            right: 0;
+            margin: 10px;
+        }
+
+        .predict {
+            width: 500px;
+            margin-left: 33%;
+        }
+
+        .predict h1 {
+            text-align: center;
+            font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+            font-size: 32px;
+            color: rgb(20,140,255);
+        }
+
+        form {
+            margin: 10px;
+        }
+
+        input[type=text] {
+          width: 100%;
+          padding: 12px 10px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 10px;
+          background-color: #F0F8FF;
+        }
+
+        button {
+          width: 100%;
+          padding: 12px 10px;
+          margin: 8px 0;
+          border-radius: 10px;
+          background: linear-gradient(#e66465, #9198e5);
+          font-size: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="logos-container">
+        <img class="logo" src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-Logo-20081.png">
+        <img class="logo2" src="https://mentocta.com/wp-content/uploads/2016/08/datascience-1024x511.png">
+    </div>
+
+    <div class="predict">
+        <h1>Predict Restaurant Ratings</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="Longitude" placeholder="Longitude" required>
+            <input type="text" name="Latitude" placeholder="Latitude" required>
+            <input type="text" name="Cost for two" placeholder="Cost" required>
+            <input type="text" name="Has Table booking" placeholder="Has Table Booking (0/1)" required>
+            <input type="text" name="Has Online delivery" placeholder="Has Online Delivery (0/1)" required>
+            <input type="text" name="Is delivering now" placeholder="Is Delivering Now (0/1)" required>
+            <input type="text" name="Switch to order menu" placeholder="Switch To Order Menu (0/1)" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+
+    </div>
+</body>
+</html>
